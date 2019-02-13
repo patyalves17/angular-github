@@ -16,16 +16,15 @@ export class AuthService {
             (resolve,reject) =>{
                 setTimeout(()=>{
                     resolve(this.loggedIn);
-                },800);
+                },80);
             }
         );
         return promis;
     }
 
-  
-
     login(username: string, password: string) {
-     
+      this.loggedIn=true;
+      console.log("loggedIn -->",this.loggedIn);
   }
 
   // authenticate(userName:string, password:string){
@@ -36,13 +35,8 @@ export class AuthService {
   //   }));
   // }
 
-
-  //   getUserPhoto(userName:string){ 
-  //     return this.http.get<Photo[]>(`${API}/${userName}/photos`);
-  // }
-
-
     logout(){
         this.loggedIn=false;
+        console.log("loggedIn -->",this.loggedIn);
     }
 }

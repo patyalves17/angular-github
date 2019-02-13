@@ -9,7 +9,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private route:Router, private authService:AuthService) { }
+  constructor(private route:Router, private authService:AuthService) {
+    console.log("ListComponent");
+   }
 
   ngOnInit() {
   }
