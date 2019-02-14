@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,10 +28,11 @@ export class AuthService {
       console.log("loggedIn -->",this.loggedIn);
   }
 
-  getAccessToken(code:string){
-
-    // `https://github.com/login/oauth/access_token?client_id=ad3ff196bbad5e9437a2&client_secret=7b940627c3fc95845760a2bbea5f329cfefdf837&code=${code}`
+  getAccessToken(code:string): Observable<any> {
+    const url = `https://github.com/login/oauth/access_token?client_id=${this.clientId}&client_secret=${this.clientSecret}&code=${code}`;
+    return this.http.get<any>(url);
   }
+
 
   // authenticate(userName:string, password:string){
   //   return this.http.post(`${API_URL}/user/login`,{ userName, password }, { observe : 'response' })

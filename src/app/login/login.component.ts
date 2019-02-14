@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,15 @@ export class LoginComponent implements OnInit {
       console.log(params);
       this.code=params['code'];
       console.log("this.code -->",this.code);
-      
+
+      if(this.code){
+        this.authService.getAccessToken(this.code).subscribe(token=>{
+          console.log("token",token);
+        });
+      }
+
+     
+
     });
 
   }
