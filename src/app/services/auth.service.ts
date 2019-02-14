@@ -29,18 +29,20 @@ export class AuthService {
   }
 
   getAccessToken(code:string): Observable<any> {
-    const url = `https://github.com/login/oauth/access_token?client_id=${this.clientId}&client_secret=${this.clientSecret}&code=${code}`;
-    return this.http.get<any>(url);
+  
+    return this.http.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, 
+    {
+      'client_id':this.clientId,
+      'client_secret':this.clientSecret,
+      'code':code,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Action':'application/json',
+        'Accept' : 'application/json'
+      }
+    });
   }
-
-
-  // authenticate(userName:string, password:string){
-  //   return this.http.post(`${API_URL}/user/login`,{ userName, password }, { observe : 'response' })
-  //   .pipe(tap(res =>{
-  //     const authToken=res.headers.get('x-access-token');
-  //     this.userService.setToken(authToken);
-  //   }));
-  // }
 
     logout(){
         this.loggedIn=false;

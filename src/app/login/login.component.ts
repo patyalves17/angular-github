@@ -34,8 +34,9 @@ export class LoginComponent implements OnInit {
       console.log("this.code -->",this.code);
 
       if(this.code){
+        console.log("entrou no if");
         this.authService.getAccessToken(this.code).subscribe(token=>{
-          console.log("token",token);
+          console.log("token--> ",token);
         });
       }
 
