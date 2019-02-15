@@ -9,7 +9,7 @@ import { ReposService } from '../services/repos.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  private repos:any;
+  public repos:any;
 
   constructor(private route:Router, private authService:AuthService, private reposService:ReposService) {
     console.log("ListComponent");
