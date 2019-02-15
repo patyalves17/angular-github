@@ -9,6 +9,7 @@ import { ReposService } from '../services/repos.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  private repos:any;
 
   constructor(private route:Router, private authService:AuthService, private reposService:ReposService) {
     console.log("ListComponent");
@@ -16,6 +17,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.reposService.getRepos().subscribe(repos=>{
+      this.repos=repos;
       console.log(repos);
     });
 

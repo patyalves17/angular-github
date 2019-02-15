@@ -2,3 +2,17 @@
   <a class="navbar-brand">Navbar</a>
   <button type="button" class="btn btn-link" (click)=" doLogout()">Sair</button>
 </nav>
+
+
+<div >
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let repo of repos">
+      {{repo.name}}<br/>
+    <span>Forks: {{repo.forks_count}}</span>
+    <span> Stars: {{repo.stargazers_count}}</span>
+    </li>
+  </ul>
+  
+</div>
+
+
