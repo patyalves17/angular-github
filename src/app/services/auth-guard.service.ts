@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanLoad {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
-  canLoad(route: Route, segments: UrlSegment[]): Observable<boolean>|Promise<boolean>|boolean {
+  canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     return this.authService.isAuthenticated()
       .then(
         (authenticated: boolean) => {
