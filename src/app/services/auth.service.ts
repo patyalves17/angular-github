@@ -23,7 +23,6 @@ export class AuthService {
     }
 
   getAccessToken(code:string): Observable<any> {
-    // return this.http.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, 
     return this.http.post(`https://hidden-woodland-32300.herokuapp.com/https://github.com/login/oauth/access_token`, 
     {
       'client_id':CLIENT_ID,

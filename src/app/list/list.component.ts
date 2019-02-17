@@ -14,12 +14,10 @@ export class ListComponent implements OnInit {
   isMore:boolean=true;
 
   constructor(private route:Router, private authService:AuthService, private reposService:ReposService) {
-    console.log("ListComponent");
    }
 
   ngOnInit() {
     this.getRepos();
-
   }
 
   loadMore(){

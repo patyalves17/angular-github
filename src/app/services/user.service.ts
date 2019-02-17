@@ -16,9 +16,9 @@ export class UserService {
     return JSON.parse(sessionStorage.getItem(KEY));
   }
 
-  getToken2() {
-    return JSON.parse(sessionStorage.getItem(KEY)).access_token;
-  }
+  // getToken2() {
+  //   return JSON.parse(sessionStorage.getItem(KEY)).access_token;
+  // }
 
   clearToken(){
     sessionStorage.removeItem(KEY);
