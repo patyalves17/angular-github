@@ -23,6 +23,10 @@ export class AuthService {
     }
 
   getAccessToken(code:string): Observable<any> {
+
+    console.log('code--> ',code);
+
+
     return this.http.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, 
     {
       'client_id':CLIENT_ID,
@@ -35,6 +39,7 @@ export class AuthService {
         'Accept' : 'application/json'
       }
     }).pipe(tap(res =>{
+      console.log('res--> ',res);
       this.userService.setToken(res.access_token);
       return res;
     }));

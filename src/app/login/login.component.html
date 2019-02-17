@@ -1,23 +1,61 @@
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
-</div>
-<div class="card px-3 mx-auto" style="width: 18rem;" >
-  <form  [formGroup]="loginForm" (submit)="doLogin()">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email</label>
-    
-      <input type="email"  #emailInput class="form-control"  formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email is required.</small>
-    </div>
 
-    
-    
-    <button type="submit"[disabled]="loginForm.invalid"   class="btn btn-primary">Login</button>
-    <!-- <a href="" class="btn btn-primary">GitHub</a> -->
-  </form>
-  
+<div class="container">
+    <div class="row justify-content-center align-items-center login" >
+        <div class="col-6">
+            <div class="card">
+
+              <div class="card-header text-center">
+                  <img class="mb-4" src="../../assets/imgs/github-logo.png" alt="" width="72" height="72">
+                  <h5 class="mb-3 font-weight-normal">Please sign in</h5> 
+
+              </div>
+               
+
+
+                <div class="card-body">
+                    <form  [formGroup]="loginForm" (submit)="doLogin()" class="form-signin">
+                        <div class="form-group">
+                            <input type="email"  #emailInput class="form-control" formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email or username">
+                            <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email is required.</small>
+                          
+                        </div>
+                       
+                        <button type="submit"[disabled]="loginForm.invalid"   class="btn btn-info btn-lg btn-block">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<!-- https://paty-angular-github.herokuapp.com/ -->
+
+
+<!-- <div class="" >  -->
+  
+  <!-- <form  [formGroup]="loginForm" (submit)="doLogin()" class="form-signin card p-3">
+
+
+      <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> -->
+
+<!-- 
+      <label for="inputEmail" class="sr-only">Email ou Username</label>
+      <input type="email"  #emailInput class="form-control" formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email or username">
+      <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email is required.</small> -->
+    
+      <!-- <label for="exampleInputEmail1">Email</label> -->
+    
+      <!-- <input type="email"  #emailInput class="form-control"  formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email"> -->
+      <!-- <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email is required.</small> -->
+   
+      
+<!-- 
+    <button type="submit"[disabled]="loginForm.invalid"   class="btn btn-primary">Login</button>
+  </form> -->
+
+  
+<!-- </div> -->
+  

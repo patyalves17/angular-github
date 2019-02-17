@@ -28,9 +28,13 @@ export class LoginComponent implements OnInit {
 
     this.router.queryParams.subscribe(params=>{
       this.code=params['code'];
+      console.log(this.code);
 
       if(this.code){
+        console.log("entrou no if");
         this.authService.getAccessToken(this.code).subscribe(token=>{
+          console.log(token);
+          
           this.route.navigate(['list']);
         },error=>{
           console.log("error");
