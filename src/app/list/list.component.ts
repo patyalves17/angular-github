@@ -9,7 +9,7 @@ import { ReposService } from '../services/repos.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  public repos:any;
+  public repos:any=[];
   page:number=1;
   isMore:boolean=true;
 
@@ -18,15 +18,11 @@ export class ListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.reposService.getRepos(this.page).subscribe(repos=>{
-      this.repos=repos;
-      console.log(repos);
-    });
+    this.getRepos();
 
   }
 
   loadMore(){
-    console.log("loadMore");
     this.page++;
     this.getRepos();
   }
@@ -41,7 +37,6 @@ export class ListComponent implements OnInit {
   }
 
   doLogout(){
-    console.log("doLogout");
     this.authService.logout();
     this.route.navigate(['']);
   }
