@@ -10,17 +10,34 @@ import { ReposService } from '../services/repos.service';
 })
 export class ListComponent implements OnInit {
   public repos:any;
+  page:number=1;
+  isMore:boolean=true;
 
   constructor(private route:Router, private authService:AuthService, private reposService:ReposService) {
     console.log("ListComponent");
    }
 
   ngOnInit() {
-    this.reposService.getRepos().subscribe(repos=>{
+    this.reposService.getRepos(this.page).subscribe(repos=>{
       this.repos=repos;
       console.log(repos);
     });
 
+  }
+
+  loadMore(){
+    console.log("loadMore");
+    this.page++;
+    this.getRepos();
+  }
+
+  getRepos(){
+    this.reposService.getRepos(this.page).subscribe(repos=>{
+      if(repos.length<30){
+        this.isMore=false;
+      }
+      this.repos=this.repos.concat(repos);
+    });
   }
 
   doLogout(){
