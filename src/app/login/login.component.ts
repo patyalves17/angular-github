@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CLIENT_ID } from '../constants';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -20,12 +21,19 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route:Router, 
     private router:ActivatedRoute,
-    private authService:AuthService) { }
+    private authService:AuthService,
+    private userService:UserService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required]
     });
+
+    // if(this.authService.isAuthenticated){
+    //   this.route.navigate(['list']);
+    // }
+
+    
 
     this.router.queryParams.subscribe(params=>{
       this.code=params['code'];

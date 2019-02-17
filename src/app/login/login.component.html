@@ -8,10 +8,9 @@
                   <h5 class="mb-3 font-weight-normal">Please sign in</h5> 
 
               </div>
-               
-
-
+            
                 <div class="card-body">
+
                     <form  [formGroup]="loginForm" (submit)="doLogin()" class="form-signin">
                         <div class="form-group">
                             <input type="email"  #emailInput class="form-control" formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email or username">
@@ -21,6 +20,7 @@
                        
                         <button type="submit"[disabled]="loginForm.invalid"   class="btn btn-info btn-lg btn-block">Login</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
