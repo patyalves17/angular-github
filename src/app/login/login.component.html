@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row justify-content-center align-items-center login" >
-        <div class="col-6">
+        <div class="col  col-12 col-sm-12 col-md-8 col-lg-8">
             <div class="card">
 
               <div class="card-header text-center">
@@ -17,7 +17,7 @@
                     <form  [formGroup]="loginForm" (submit)="doLogin()" class="form-signin">
                         <div class="form-group">
                             <input type="email"  #emailInput class="form-control" formControlName="email" name="email" autofocus aria-describedby="emailHelp" placeholder="Enter email or username">
-                            <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email is required.</small>
+                            <small id="emailHelp" *ngIf="loginForm.get('email').errors?.required"class="form-text text-danger">Email or username is required.</small>
                           
                         </div>
                        

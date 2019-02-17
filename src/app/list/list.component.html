@@ -1,18 +1,33 @@
-<nav class="navbar navbar-light  bg-info">
-  <a class="navbar-brand">Navbar</a>
+<nav class="navbar navbar-dark  bg-info">
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/imgs/github-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Angular Github
+      </a>
+      
   <button type="button" class="btn btn-link" (click)=" doLogout()">Sair</button>
 </nav>
 
 
-<div >
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let repo of repos">
-      {{repo.name}}<br/>
-    <span>Forks: {{repo.forks_count}}</span>
-    <span> Stars: {{repo.stargazers_count}}</span>
-    </li>
+<ul class="list-unstyled text-muted  rounded shadow-sm">
+  <li class="media border-bottom border-gray pt-3  pl-3 pr-3 " *ngFor="let repo of repos">
+        
+    <div class="mr-2  language " 
+    [ngClass]="{ 
+      'typeScript': repo.language=='TypeScript',
+      'java': repo.language=='Java' ,
+      'javascript': repo.language=='JavaScript',
+      'swift': repo.language=='Swift' ,
+      'objectiveC': repo.language=='Objective-C' ,
+      'kotlin': repo.language=='Kotlin:' ,
+      'c': repo.language=='C#' 
+    }" >  </div>
+      <div class="media-body small">
+        <h5 class="mt-0 mb-1">{{repo.name}}</h5>
+        <p><small>{{repo.language}}</small><br/>
+        Description: {{repo.description}}<br/>
+         forks 2  stars 2</p>
+      </div>
+    </li>    
   </ul>
-  
-</div>
 
 

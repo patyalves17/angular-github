@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
         console.log("entrou no if");
         this.authService.getAccessToken(this.code).subscribe(token=>{
           console.log(token);
-          
           this.route.navigate(['list']);
         },error=>{
           console.log("error");
+          this.route.navigate(['']);
         });
       }
     });

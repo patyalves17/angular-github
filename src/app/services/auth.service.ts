@@ -23,11 +23,8 @@ export class AuthService {
     }
 
   getAccessToken(code:string): Observable<any> {
-
-    console.log('code--> ',code);
-
-
-    return this.http.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, 
+    // return this.http.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, 
+    return this.http.post(`https://hidden-woodland-32300.herokuapp.com/https://github.com/login/oauth/access_token`, 
     {
       'client_id':CLIENT_ID,
       'client_secret':CLIENT_SECRET,
@@ -36,10 +33,10 @@ export class AuthService {
       headers: {
         'Content-Type': 'application/json',
         'Action':'application/json',
-        'Accept' : 'application/json'
+        'Accept' : 'application/json',
+        'X-Requested-With':'XMLHttpRequest'
       }
     }).pipe(tap(res =>{
-      console.log('res--> ',res);
       this.userService.setToken(res.access_token);
       return res;
     }));
