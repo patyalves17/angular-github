@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
     private userService:UserService) { }
 
   ngOnInit() {
-    console.log("LoginComponent");
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required]
     });
