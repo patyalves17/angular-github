@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Data } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ReposService } from '../services/repos.service';
 
@@ -13,11 +13,16 @@ export class ListComponent implements OnInit {
   page:number=1;
   isMore:boolean=true;
 
-  constructor(private route:Router, private authService:AuthService, private reposService:ReposService) {
+  constructor(private route:Router, 
+    private router:ActivatedRoute,
+    private authService:AuthService, 
+    private reposService:ReposService) {
    }
 
   ngOnInit() {
-    this.getRepos();
+    this.router.data.subscribe((data:Data)=>{
+      this.repos=data['repos'];
+    });
   }
 
   loadMore(){

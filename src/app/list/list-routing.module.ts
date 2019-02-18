@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './list.component';
+import { ReposResolver } from './repos-resolver.service';
 const routes: Routes = [
-  { path:'', component: ListComponent}
+  { path:'', component: ListComponent, resolve:{repos:ReposResolver}}
 ];
 
 
