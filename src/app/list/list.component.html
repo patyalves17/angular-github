@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark  bg-info">
+<nav class="navbar fixed-top navbar-dark  bg-info">
     <a class="navbar-brand" href="#">
         <img src="../../assets/imgs/github-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Angular Github
@@ -7,7 +7,7 @@
   <button type="button" class="btn btn-link" (click)=" doLogout()">Sair</button>
 </nav>
 
-
+<div class="repos">
 <ul class="list-unstyled text-muted  rounded shadow-sm">
   <li class="media border-bottom border-gray pt-3  pl-3 pr-3 " *ngFor="let repo of repos">
         
@@ -34,3 +34,4 @@
   <button type="button" class="btn btn-info  btn-lg btn-block" (click)="loadMore()" *ngIf="isMore"> load more</button>
 
 
+</div>
