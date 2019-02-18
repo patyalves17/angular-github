@@ -25,13 +25,17 @@ export class LoginComponent implements OnInit {
     private userService:UserService) { }
 
   ngOnInit() {
+    console.log("LoginComponent");
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required]
     });
 
-    // if(this.authService.isAuthenticated){
-    //   this.route.navigate(['list']);
-    // }
+    this.authService.isAuthenticated().then(
+      (authenticated: boolean) => {
+        if (authenticated) {
+          this.route.navigate(['list']);
+        } 
+      })
 
     
 
