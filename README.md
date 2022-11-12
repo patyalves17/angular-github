@@ -10,14 +10,5 @@ Run `npm install` to download the dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<img width="1437" alt="Screen Shot 2022-11-11 at 23 05 36" src="https://user-images.githubusercontent.com/14838416/201451507-274ccf5d-44b2-4719-834a-b217b661537e.png">
+<img width="1436" alt="Screen Shot 2022-11-11 at 23 05 51" src="https://user-images.githubusercontent.com/14838416/201451522-ce04c3e9-c9f6-44ca-b242-9f295edf9b23.png">
